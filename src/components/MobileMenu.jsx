@@ -1,67 +1,43 @@
-
+const navItems = [
+  { name: "Home", href: "#home" },
+  { name: "About", href: "#about" },
+  { name: "Projects", href: "#projects" },
+  { name: "Experience", href: "#experience" },
+  { name: "Contact", href: "#contact" },
+];
 
 export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
   return (
     <div
-      className={`fixed top-0 left-0 w-full bg-[rgba(10,10,10,0.8)] z-40 flex flex-col items-center justify-center
-                     transition-all duration-300 ease-in-out
-
-                     ${menuOpen
-          ? "h-screen opacity-100 pointer-events-auto"
-          : "h-0 opacity-0 pointer-events-none"
-        }
-                   `}
+      className={`fixed inset-0 z-40 flex flex-col items-center justify-center bg-black/95 backdrop-blur-2xl transition-all duration-300 md:hidden ${
+        menuOpen
+          ? "pointer-events-auto opacity-100"
+          : "pointer-events-none opacity-0"
+      }`}
     >
       <button
         onClick={() => setMenuOpen(false)}
-        className="absolute top-6 right-6 text-white text-3xl focus:outline-none cursor-pointer"
+        className="absolute right-6 top-6 text-4xl text-white"
         aria-label="Close Menu"
       >
-        &times;
+        ×
       </button>
 
-      <a
-        href="#home"
-        onClick={() => setMenuOpen(false)}
-        className={`text-2xl font-semibold text-white my-4 transform transition-transform duration-300
-                    ${menuOpen
-            ? "opacity-100 translate-y-0"
-            : "opacity-0 translate-y-5"
-          }        
-            `}
-      >
-        Home
-      </a>
-      <a
-        href="#about"
-        onClick={() => setMenuOpen(false)}
-        className={`text-2xl font-semibold text-white my-4 transform transition-transform duration-300
-            ${menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
-          }        
-    `}
-      >
-        About
-      </a>
-      <a
-        href="#projects"
-        onClick={() => setMenuOpen(false)}
-        className={`text-2xl font-semibold text-white my-4 transform transition-transform duration-300
-            ${menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
-          }        
-    `}
-      >
-        Projects
-      </a>
-      <a
-        href="#contact"
-        onClick={() => setMenuOpen(false)}
-        className={`text-2xl font-semibold text-white my-4 transform transition-transform duration-300
-            ${menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
-          }        
-    `}
-      >
-        Contact
-      </a>
+      <div className="flex flex-col items-center gap-6">
+        {navItems.map((item, index) => (
+          <a
+            key={item.name}
+            href={item.href}
+            onClick={() => setMenuOpen(false)}
+            className={`text-2xl font-semibold text-white transition duration-300 hover:text-cyan-400 ${
+              menuOpen ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
+            }`}
+            style={{ transitionDelay: `${index * 100}ms` }}
+          >
+            {item.name}
+          </a>
+        ))}
+      </div>
     </div>
   );
 };

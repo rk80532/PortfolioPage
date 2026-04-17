@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { RevealOnScroll } from "../RevealOnScroll";
-import emailjs from "emailjs-com";
 
 export const Contact = () => {
   const [formData, setFormData] = useState({
@@ -11,81 +10,101 @@ export const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    emailjs
-      .sendForm(
-        import.meta.env.VITE_SERVICE_ID,
-        import.meta.env.VITE_TEMPLATE_ID,
-        e.target,
-        import.meta.env.VITE_PUBLIC_KEY
-      )
-      .then((result) => {
-        alert("Message Sent!");
-        setFormData({ name: "", email: "", message: "" });
-      })
-      .catch(() => alert("Oops! Something went wrong. Please try again."));
+    alert(
+      "Contact form submitted. Connect EmailJS or Formspree to make it live.",
+    );
+    setFormData({ name: "", email: "", message: "" });
   };
 
   return (
-    <section
-      id="contact"
-      className="min-h-screen flex items-center justify-center py-20"
-    >
+    <section id="contact" className="px-4 py-24">
       <RevealOnScroll>
-        <div className="px-4 w-full min-w-[300px] md:w-[500px] sm:w-2/3 p-6">
-          <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center">
-            {" "}
-            Get In Touch
-          </h2>
-          <form className="space-y-6" onSubmit={handleSubmit}>
-            <div className="relative">
+        <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-2">
+          <div>
+            <p className="mb-3 text-sm uppercase tracking-[0.3em] text-fuchsia-400">
+              Contact
+            </p>
+            <h2 className="text-3xl font-bold text-white md:text-5xl">
+              Let’s build something great together
+            </h2>
+            <p className="mt-5 max-w-xl leading-7 text-gray-300">
+              I’m open to internship opportunities, frontend roles, MERN stack
+              work, collaborations, and project discussions.
+            </p>
+
+            <div className="mt-8 space-y-4">
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-4 text-gray-300">
+                <span className="font-semibold text-white">Email:</span>{" "}
+                rahul.skn123@gmail.com
+              </div>
+
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-4 text-gray-300">
+                <span className="font-semibold text-white">Location:</span>{" "}
+                Lucknow, Uttar Pradesh, India
+              </div>
+
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-4 text-gray-300">
+                <span className="font-semibold text-white">GitHub:</span>{" "}
+                github.com/rk80532
+              </div>
+            </div>
+          </div>
+
+          <form
+            onSubmit={handleSubmit}
+            className="rounded-[28px] border border-white/10 bg-white/5 p-6 backdrop-blur-xl"
+          >
+            <div className="mb-4">
+              <label className="mb-2 block text-sm text-gray-300">
+                Your Name
+              </label>
               <input
                 type="text"
-                id="name"
-                name="name"
-                required
                 value={formData.name}
-                className="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/5"
-                placeholder="Name..."
                 onChange={(e) =>
                   setFormData({ ...formData, name: e.target.value })
                 }
+                className="w-full rounded-xl border border-white/10 bg-black/30 px-4 py-3 text-white outline-none focus:border-cyan-400"
+                placeholder="Enter your name"
+                required
               />
             </div>
 
-            <div className="relative">
+            <div className="mb-4">
+              <label className="mb-2 block text-sm text-gray-300">
+                Your Email
+              </label>
               <input
                 type="email"
-                id="email"
-                name="email"
-                required
                 value={formData.email}
-                className="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/5"
-                placeholder="example@gmail.com"
                 onChange={(e) =>
                   setFormData({ ...formData, email: e.target.value })
                 }
+                className="w-full rounded-xl border border-white/10 bg-black/30 px-4 py-3 text-white outline-none focus:border-cyan-400"
+                placeholder="Enter your email"
+                required
               />
             </div>
 
-            <div className="relative">
+            <div className="mb-6">
+              <label className="mb-2 block text-sm text-gray-300">
+                Message
+              </label>
               <textarea
-                id="message"
-                name="message"
-                required
-                rows={5}
+                rows="6"
                 value={formData.message}
-                className="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/5"
-                placeholder="Your Message..."
                 onChange={(e) =>
                   setFormData({ ...formData, message: e.target.value })
                 }
+                className="w-full rounded-xl border border-white/10 bg-black/30 px-4 py-3 text-white outline-none focus:border-cyan-400"
+                placeholder="Tell me about your project or opportunity"
+                required
               />
             </div>
 
             <button
               type="submit"
-              className="w-full bg-blue-500 text-white py-3 px-6 rounded font-medium transition relative overflow-hidden hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)]"
+              className="w-full rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 px-6 py-3 font-semibold text-white shadow-[0_0_30px_rgba(34,211,238,0.25)] transition hover:-translate-y-1"
             >
               Send Message
             </button>

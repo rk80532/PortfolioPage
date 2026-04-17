@@ -4,53 +4,42 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
   }, [menuOpen]);
-  
+
+  const navItems = [
+    { name: "Home", href: "#home" },
+    { name: "About", href: "#about" },
+    { name: "Projects", href: "#projects" },
+    { name: "Experience", href: "#experience" },
+    { name: "Contact", href: "#contact" },
+  ];
+
   return (
-    <nav className="fixed top-0 w-full z-40 bg-[rgba(10, 10, 10, 0.8)] backdrop-blur-lg border-b border-white/10 shadow-lg">
-      <div className="max-w-5xl mx-auto px-4">
-        <div className="flex justify-between items-center h-16">
-          <a href="#home" className="font-mono text-xl font-bold text-white">
-            {" "}
-            My<span className="text-blue-500">Portfolio</span>{" "}
-          </a>
+    <nav className="fixed top-0 z-50 w-full border-b border-white/10 bg-black/50 backdrop-blur-xl">
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 md:px-6">
+        <a
+          href="#home"
+          className="text-lg font-bold tracking-wide text-white md:text-xl"
+        >
+          Rahul<span className="text-cyan-400">.dev</span>
+        </a>
 
-          <div
-            className="w-7 h-5 relative cursor-pointer z-40 md:hidden"
-            onClick={() => setMenuOpen((prev) => !prev)}
-          >
-            &#9776;
-          </div>
+        <div
+          className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-white/10 bg-white/5 text-2xl text-white md:hidden"
+          onClick={() => setMenuOpen((prev) => !prev)}
+        >
+          ☰
+        </div>
 
-          <div className="hidden md:flex items-center space-x-8">
+        <div className="hidden items-center gap-7 md:flex">
+          {navItems.map((item) => (
             <a
-              href="#home"
-              className="text-gray-300 hove:text-white transition-colors"
+              key={item.name}
+              href={item.href}
+              className="text-sm text-gray-300 transition duration-300 hover:text-white"
             >
-              {" "}
-              Home
+              {item.name}
             </a>
-            <a
-              href="#about"
-              className="text-gray-300 hove:text-white transition-colors"
-            >
-              {" "}
-              About{" "}
-            </a>
-            <a
-              href="#projects"
-              className="text-gray-300 hove:text-white transition-colors"
-            >
-              {" "}
-              Projects{" "}
-            </a>
-            <a
-              href="#contact"
-              className="text-gray-300 hove:text-white transition-colors"
-            >
-              {" "}
-              Contact{" "}
-            </a>
-          </div>
+          ))}
         </div>
       </div>
     </nav>

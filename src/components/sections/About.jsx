@@ -1,90 +1,90 @@
 import { RevealOnScroll } from "../RevealOnScroll";
 
 export const About = () => {
-  const frontendSkills = ["HTML", "CSS", "JavaScript", "React", "TailwindCSS"];
-
-  const backendSkills = ["Node.js", "Express.js", "React.js", "MongoDB",];
+  const skills = [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "React.js",
+    "Tailwind CSS",
+    "Node.js",
+    "Express.js",
+    "MongoDB",
+    "Java",
+    "C",
+    "DSA",
+    "Git",
+    "GitHub",
+    "REST APIs",
+  ];
 
   return (
-    <section
-      id="about"
-      className="min-h-screen flex items-center justify-center py-20"
-    >
+    <section id="about" className="px-4 py-24">
       <RevealOnScroll>
-        <div className="max-w-3xl mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center">
-            {" "}
-            About Me
-          </h2>
-
-          <div className="rounded-xl p-8 border-white/10 border hover:-translate-y-1 transition-all">
-            <p className="text-gray-300 mb-6">
-              I'm developer skilled in Java, C, and frontend web development and DSA. I enjoy creating interactive websites and solving complex problems with clean code.
+        <div className="mx-auto max-w-6xl">
+          <div className="mb-12">
+            <p className="mb-3 text-sm uppercase tracking-[0.3em] text-cyan-400">
+              About Me
             </p>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="rounded-xl p-6 hover:-translate-y-1 transition-all">
-                <h3 className="text-xl font-bold mb-4"> Frontend</h3>
-                <div className="flex flex-wrap gap-2">
-                  {frontendSkills.map((tech, key) => (
-                    <span
-                      key={key}
-                      className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 
-                                    hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition
-                    "
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div className="rounded-xl p-6 hover:-translate-y-1 transition-all">
-                <h3 className="text-xl font-bold mb-4"> Backend</h3>
-                <div className="flex flex-wrap gap-2">
-                  {backendSkills.map((tech, key) => (
-                    <span
-                      key={key}
-                      className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 
-                                    hover:shadow-[0_2px_8px_rgba(59,130,2246,0.2)] transition
-                    "
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
+            <h2 className="text-3xl font-bold text-white md:text-5xl">
+              Developer with strong frontend, MERN and Java foundations.
+            </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-            <div className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 transition-all">
-              <h3 className="text-xl font-bold mb-4"> 🏫 Education </h3>
-              <ul className="list-disc list-inside text-gray-300 space-y-2">
-                <li>
-                  <strong> B.Tech. in Computer Science </strong> - BBD University
-                  (2022-2026)
-                </li>
-                <li>
-                  Relevant Coursework: Data Structures, Web Development
-                </li>
-              </ul>
-            </div>
-            <div className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 transition-all">
-              <h3 className="text-xl font-bold mb-4"> 💼 Work Experience </h3>
-              <div className="space-y-4 text-gray-300">
+          <div className="grid gap-8 md:grid-cols-2">
+            <div className="rounded-[28px] border border-white/10 bg-white/5 p-6 backdrop-blur-xl">
+              <p className="leading-7 text-gray-300">
+                I’m Rahul Kumar, a B.Tech Computer Science student at BBD
+                University. I enjoy building responsive websites, full stack
+                applications, and creative portfolio experiences with a modern
+                futuristic look.
+              </p>
 
+              <p className="mt-4 leading-7 text-gray-300">
+                My work combines frontend design, backend logic, Java problem
+                solving, and real project implementation. I’ve built projects
+                ranging from blog platforms and e-commerce websites to AI-based
+                and game-oriented systems.
+              </p>
 
-                <div>
-                  <h4 className="font-semibold">
-                    {" "}
-                    Intern at BBDU (2025){" "}
-                  </h4>
-                  <p>
-                    Assisted in building front-end components and integration
-                    REST APIs
+              <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                <div className="rounded-2xl border border-white/10 bg-black/30 p-4">
+                  <p className="text-sm text-gray-400">Education</p>
+                  <h3 className="mt-2 text-lg font-semibold text-white">
+                    B.Tech CSE
+                  </h3>
+                  <p className="mt-2 text-sm text-gray-300">
+                    Babu Banarasi Das University, 2022–2026
                   </p>
                 </div>
+
+                <div className="rounded-2xl border border-white/10 bg-black/30 p-4">
+                  <p className="text-sm text-gray-400">Current Goal</p>
+                  <h3 className="mt-2 text-lg font-semibold text-white">
+                    Placement Ready
+                  </h3>
+                  <p className="mt-2 text-sm text-gray-300">
+                    Focused on internships, frontend/full stack roles, and
+                    building standout projects.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-[28px] border border-white/10 bg-white/5 p-6 backdrop-blur-xl">
+              <h3 className="mb-5 text-2xl font-semibold text-white">
+                Tech Stack
+              </h3>
+
+              <div className="flex flex-wrap gap-3">
+                {skills.map((skill) => (
+                  <span
+                    key={skill}
+                    className="rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-2 text-sm text-cyan-200"
+                  >
+                    {skill}
+                  </span>
+                ))}
               </div>
             </div>
           </div>
