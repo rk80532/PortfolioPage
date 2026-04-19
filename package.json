@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "portfolio",
+=======
+  "name": "portfoliopage",
+>>>>>>> 48da0e34f03a5bea6819af3b14b5a3d0cd528282
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,6 +14,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+<<<<<<< HEAD
     "@tailwindcss/vite": "^4.2.2",
     "framer-motion": "^12.38.0",
     "lucide-react": "^1.8.0",
@@ -27,5 +32,23 @@
     "eslint-plugin-react-refresh": "^0.5.2",
     "globals": "^17.4.0",
     "vite": "^8.0.4"
+=======
+    "@tailwindcss/vite": "^4.1.11",
+    "emailjs-com": "^3.2.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "tailwindcss": "^4.1.11"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.30.1",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@vitejs/plugin-react": "^4.6.0",
+    "eslint": "^9.30.1",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "globals": "^16.3.0",
+    "vite": "^7.0.4"
+>>>>>>> 48da0e34f03a5bea6819af3b14b5a3d0cd528282
   }
 }
