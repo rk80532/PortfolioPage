@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { Download, Layers3 } from "lucide-react";
 
 export default function Navbar() {
@@ -44,7 +43,7 @@ export default function Navbar() {
     </header>
   );
 }
-=======
+
 import { useEffect } from "react";
 
 export const Navbar = ({ menuOpen, setMenuOpen }) => {
@@ -73,9 +72,7 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
         <div
           className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-white/10 bg-white/5 text-2xl text-white md:hidden"
           onClick={() => setMenuOpen((prev) => !prev)}
-        >
-          ☰
-        </div>
+        ></div>
 
         <div className="hidden items-center gap-7 md:flex">
           {navItems.map((item) => (
@@ -92,4 +89,3 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
     </nav>
   );
 };
->>>>>>> 48da0e34f03a5bea6819af3b14b5a3d0cd528282

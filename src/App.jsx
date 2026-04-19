@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -29,7 +28,7 @@ export default function App() {
     </div>
   );
 }
-=======
+
 import { useState } from "react";
 import "./App.css";
 import "./index.css";
@@ -77,4 +76,4 @@ function App() {
 }
 
 export default App;
->>>>>>> 48da0e34f03a5bea6819af3b14b5a3d0cd528282
+

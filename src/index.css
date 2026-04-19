@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-<<<<<<< HEAD
 html {
   scroll-behavior: smooth;
 }
@@ -10,7 +9,7 @@ body {
   font-family: Inter, sans-serif;
   background: #09060a;
 }
-=======
+
 html,
 body {
   margin: 0;
@@ -52,11 +51,12 @@ body {
 .reveal {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
 }
 
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
 }
->>>>>>> 48da0e34f03a5bea6819af3b14b5a3d0cd528282
